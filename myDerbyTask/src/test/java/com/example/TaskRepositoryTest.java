@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 /**
  * Created by yao on 2/4/2016.
  */
-
+// test github
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MyApplication.class)
 
