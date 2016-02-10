@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        thead {color:green;}
+        tbody {color:blue;}
+        tfoot {color:red;}
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>My Tasks</title>
+</head>
+<body>
+
+<form method="POST">
+    <label>Date:</label>
+    <input type="date" name="taskDate"/><br/><br/>
+    <label>Task:</label>
+    <input type="text" name="taskName"/><br/><br/>
+    <label for="taskDone">Done</label>
+    <input type="checkbox" name="taskDone" id="taskDone" value="True"/><br/><br/>
+    <input type="submit"/>
+</form>
+
+<ul th:each="task : ${tasks}">
+    <li>
+        <!--<span th:date="${#dates.format(task.taskDate, 'dd/MMM/yyyy ')}">Date</span>-->
+        <span th:text="${task.taskDate}">Date</span>
+        <span th:text="${task.taskName}">Task</span> :
+        <label>Done:</label>
+        <input type="checkbox" th:checked="${task.taskDone}" />
+    </li>
+</ul>
+
+</body>
+</html>
